@@ -17,10 +17,16 @@
 				<cfset arrayAppend(classes,"active")/>
 			</cfif>
 
-			<li class="#arrayToList(classes," ")#"><a href="?action=#i#" title="#i#">#i#</a></li>
+			<li class="#arrayToList(classes," ")#"><a href="#buildURL(i)#" title="#i#">#i#</a></li>
 		</cfloop>
 		</cfoutput>
 		</ul>
+
+		<form class="navbar-form form-inline pull-right">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button type="submit" class="btn">Sign in</button>
+          </form>
 		</div><!--/.nav-collapse -->
 	</div>
 </div>

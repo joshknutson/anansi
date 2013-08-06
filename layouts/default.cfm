@@ -1,9 +1,12 @@
-<cfparam name="rc.message" default="#arrayNew(1)#">
-
 <!DOCTYPE html>
 <html>
+	<cfsilent>
+
+<cfparam name="rc.message" default="#arrayNew(1)#">
+</cfsilent>
 <head>
 <title>Anansi</title>
+<base href="http://localhost/anansi/" />
 <cfinclude template="_includes/meta.cfm" />
 <cfinclude template="_includes/css.cfm" />
 <cfinclude template="_includes/js.cfm" />
@@ -22,6 +25,8 @@
 			</cfif>
 			#body#
 	</div>
+
+	#view( 'common:site/footer' )#
 	</cfoutput>
 
 </div>

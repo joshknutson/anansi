@@ -9,7 +9,7 @@ component extends="frameworks.org.corfield.framework" {
 
 	variables.framework = {
 		cacheFileExists = !this.development
-		, generateSES = true
+		, generateSES = false
 		, maxNumContextsPreserved = 1
 		, password = ""
 		, reloadApplicationOnEveryRequest = this.development
