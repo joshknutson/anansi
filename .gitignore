@@ -1,16 +1,45 @@
-# SublimeText project files
-*.sublime-workspace
-*.sublime-project
+########################
+# sails
+########################
+.sails
+.waterline
+.rigging
+.tmp
 
-# misc others
-*.tmp
 
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+########################
+# node.js / npm
+########################
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 
-# Folder config file
-Desktop.ini
+pids
+logs
+results
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+node_modules
+
+npm-debug.log
+
+
+########################
+# misc / editors
+########################
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
+
+
+########################
+# local config
+########################
+config/local.js

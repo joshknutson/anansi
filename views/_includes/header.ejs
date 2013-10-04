@@ -1,0 +1,26 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a href="/" class="navbar-brand">Anansi</a>
+
+		<div class="nav-collapse collapse">
+		<ul class="nav navbar-nav">
+			<% links = ['locations','species'] %>
+			<% for(var i=0; i<links.length; i++) {%>
+			<% classes = [] %>
+			<% if((req.url) == '/' + links[i] ) classes.push('active') %>
+
+			<li class="<% classes.join(' ') %>"><a href="/<%= links[i] %>" title="<%= links[i] %>"><%= links[i] %></a></li>
+
+			<% } %>
+
+
+		</ul>
+		<%- partial('persona')%>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>

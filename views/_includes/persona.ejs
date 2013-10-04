@@ -1,0 +1,41 @@
+<script src="https://login.persona.org/include.js"></script>
+<div class="pull-right">
+	<button type="button" class="btn" id="login">login</button>
+	<button type="button" class="btn" id="logout" style="display:none;">logout</button>
+</div>
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+	document.querySelector("#login").addEventListener("click", function() {
+	  navigator.id.get(function(assertion) {
+	    if (!assertion) {
+	      return;
+	    }
+
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "/persona/verify", true);
+	    xhr.setRequestHeader("Content-Type", "application/json");
+	    xhr.addEventListener("loadend", function(e) {
+	      var data = JSON.parse(this.responseText);
+	      if (data && data.status === "okay") {
+	        document.querySelector("#login").style.display = "none";
+			document.querySelector("#logout").style.display = "inline";
+	      }
+	    }, false);
+
+	    xhr.send(JSON.stringify({
+	      assertion: assertion
+	    }));
+	  });
+	}, false);
+
+	document.querySelector("#logout").addEventListener("click", function() {
+	  var xhr = new XMLHttpRequest();
+	  xhr.open("POST", "/persona/logout", true);
+	  xhr.addEventListener("loadend", function(e) {
+		document.querySelector("#login").style.display = "inline";
+		document.querySelector("#logout").style.display = "none";
+	  });
+	  xhr.send();
+	}, false);
+}, false);
+</script>
