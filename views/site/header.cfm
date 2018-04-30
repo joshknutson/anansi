@@ -9,7 +9,7 @@
 
 		<div class="nav-collapse collapse">
 		<ul class="nav navbar-nav">
-			<cfset links = "locations,insects,vegetation,setup" />
+		<cfset links = "locations,insects.list,vegetation,setup" />
 		<cfoutput>
 		<cfloop list="#links#" index="i">
 			<cfset classes = [] />
@@ -17,7 +17,7 @@
 				<cfset arrayAppend(classes,"active")/>
 			</cfif>
 
-			<li class="#arrayToList(classes," ")#"><a href="#buildURL(i)#" title="#i#">#i#</a></li>
+			<li class="#arrayToList(classes," ")#"><a href="#buildURL(i)#" title="#i#">#listfirst(i,".")#</a></li>
 		</cfloop>
 		</cfoutput>
 		</ul>
