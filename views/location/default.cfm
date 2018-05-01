@@ -15,7 +15,7 @@
       <cfloop collection="#local.locations#" item="local.id">
         <cfif local.id lte 10000>
         <cfset local.item = local.locations[local.id]>
-        <cfif local.id neq 0>,</cfif>['#jsstringformat(local.item.getlocality())#', #local.item.getdecimalLatitude()#, #local.item.getdecimalLongitude()#, #local.id#]
+        <cfif local.id neq 0>,</cfif>['#jsstringformat(local.item.getlocality())#', #local.item.getdecimalLatitude()#, #local.item.getdecimalLongitude()#, #local.id#,'www.google.com']
         </cfif>
       </cfloop>
     </cfoutput>
@@ -37,7 +37,8 @@
     for (i = 0; i < locations.length; i++) {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
+        map: map,
+        url: locations[i][4]
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -47,4 +48,5 @@
         }
       })(marker, i));
     }
+
   </script>
