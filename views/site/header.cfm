@@ -9,7 +9,7 @@
 
 		<div class="nav-collapse collapse">
 		<ul class="nav navbar-nav">
-		<cfset links = "locations,insects.list,vegetation,setup" />
+		<cfset links = "location,insects.list,vegetation,setup" />
 		<cfoutput>
 		<cfloop list="#links#" index="i">
 			<cfset classes = [] />

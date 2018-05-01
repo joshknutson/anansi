@@ -25,7 +25,6 @@ component extends="framework.one" {
 	};
 
 	function setupApplication() {
-		//var beanfactory = new frameworks.ioc( "/anansi/app/models,/anansi/app/helpers", { singletonPattern = "(Service|Gateway)$" } );
 		variables.helpers = getHelpers();
 	
 	}
@@ -48,10 +47,9 @@ component extends="framework.one" {
 		local.prefix = replace(replaceNoCase(directory,local.base_path,""),"\",".","all") & ".";
 	
 		files = DirectoryList(directory ,true ,"query" ,"*.cfc");
+		
 		local.helpers = {};
-	
-	
-		for(i=0; i<files.recordcount; i++) {
+		for (row in files) { 
 			file = replaceNoCase(files.name,".cfc","");
 			 local.helpers[file] = createObject("component",local.prefix&file);
 		}

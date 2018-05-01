@@ -6,7 +6,11 @@
 	
 <input type="hidden" name="id" value="#local.insect.getId()#">
 
-#helpers.display.input(name="Name",value=local.insect.getFirstName())#
+#helpers.display.input(name="Family",value=local.insect.getFamily())#
+#helpers.display.input(name="scientificName",value=local.insect.getscientificName())#
+#helpers.display.input(name="locality",value=local.insect.getlocality())#
+#helpers.display.input(name="decimalLatitude",value=local.insect.getdecimalLatitude())#
+#helpers.display.input(name="decimalLongitude",value=local.insect.getdecimalLongitude())#
 <div class="control">
     <button type="submit" class="btn btn-primary">Save Insect</button>
 </div>

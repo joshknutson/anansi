@@ -6,7 +6,8 @@
     <table>
       <thead>
         <tr>
-          <th>Insect</th>
+          <th width="20%">Family</th>
+          <th>Scientific Name</th>
         </tr>
       </thead>
     </table>
@@ -25,7 +26,7 @@
     var data = [];
     <cfloop collection="#local.insects#" item="local.id">
       <cfset local.item = local.insects[local.id]>
-    <cfoutput>data.push('<tr><td><a href="#buildURL('insects.edit&id=#local.id#')#">#local.item.getFirstName()#</a></td></tr>')</cfoutput>
+    <cfoutput>data.push('<tr><td width="20%"><a href="#buildURL('insects.edit&id=#local.id#')#">#local.item.getFamily()#</a></td><td>#local.item.getScientificName()#</td></tr>')</cfoutput>
     </cfloop>
 var clusterize = new Clusterize({
   rows: data,

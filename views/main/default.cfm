@@ -9,18 +9,18 @@
 	<div class="col-lg-4">
 	<h2>Locations</h2>
 	<p>View the map</p>
-	<p><a class="btn btn-default" href="#buildUrl('locations')#">View details &raquo;</a></p>
+	<p><a class="btn btn-default" href="#buildUrl('location')#">View details &raquo;</a></p>
 	</div>
 	<div class="col-lg-4">
 	<h2>Insects</h2>
 	<p>View Random bugs</p>
-	<p><a class="btn btn-default" href="#buildUrl('insects')#">View details &raquo;</a></p>
+	<p><a class="btn btn-default" href="#buildUrl('insects.list')#">View details &raquo;</a></p>
 	</div>
-	<div class="col-lg-4">
+	<!--- <div class="col-lg-4">
 	<h2>Vegetation</h2>
 	<p>look at plants.</p>
 	<p><a class="btn btn-default" href="#buildUrl('vegetation')#">View details &raquo;</a></p>
-	</div>
+	</div> --->
 	</div>
 
 
